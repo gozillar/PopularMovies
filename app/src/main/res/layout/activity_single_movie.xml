@@ -3,12 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
-
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
@@ -16,7 +10,7 @@
         android:layout_marginLeft="@dimen/twenty"
         android:layout_marginRight="@dimen/twenty"
         android:layout_centerVertical="true"
-        android:visibility="invisible">
+        android:visibility="visible">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,6 +23,7 @@
                 android:layout_height="@dimen/two_hundred">
 
                 <ImageView
+                    android:contentDescription="@string/movie_poster"
                     android:id="@+id/moviePoster"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -41,10 +36,11 @@
                     android:background="@color/black" />
 
                 <ImageView
+                    android:contentDescription="@string/close"
                     android:id="@+id/closeActivity"
                     android:layout_width="@dimen/twenty_five"
                     android:layout_height="@dimen/twenty_five"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_margin="@dimen/two"
                     android:src="@drawable/ic_close_white_24dp" />
 
@@ -53,26 +49,18 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/fifty"
+                android:layout_height="50dp"
                 android:background="@drawable/urllinkbackground">
-
-                <ImageView
-                    android:id="@+id/link_icon"
-                    android:layout_width="@dimen/twenty"
-                    android:layout_height="@dimen/twenty"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/five"
-                    android:layout_marginRight="@dimen/five"
-                    android:src="@drawable/ic_link_black_24dp" />
 
                 <TextView
                     android:id="@+id/movie_titles"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:layout_marginRight="@dimen/two"
-                    android:layout_toRightOf="@id/link_icon"
-                    android:text="View on Github"
+                    android:layout_marginEnd="@dimen/two"
+                    android:textSize="@dimen/title_text"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
                     android:textAlignment="center" />
 
             </RelativeLayout>
@@ -84,15 +72,15 @@
                 android:background="@color/white_ash">
 
             <LinearLayout
+                android:baselineAligned="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:weightSum="100">
 
                 <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/eighty"
-                    android:layout_marginRight="@dimen/two"
+                    android:layout_width="0dp"
+                    android:layout_height="110dp"
                     android:layout_weight="50"
                     android:background="@color/app_white_smoke">
 
@@ -102,7 +90,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="@dimen/five"
-                        android:text="Plot Synopsis"
+                        android:text="@string/plot_synopsis"
                         android:textSize="@dimen/fifteen_text_size" />
 
                     <TextView
@@ -111,18 +99,18 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/synopsis"
                         android:layout_centerInParent="true"
-                        android:layout_marginLeft="@dimen/five"
+                        android:layout_marginStart="@dimen/five"
                         android:layout_marginTop="@dimen/five"
                         android:text="@string/sample_no"
                         android:textColor="@color/blue"
-                        android:textSize="@dimen/thirty_text_size"
-                        android:textStyle="bold" />
+                        android:textSize="@dimen/dialog_values" />
 
                 </RelativeLayout>
 
             </LinearLayout>
 
             <LinearLayout
+                android:baselineAligned="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -130,9 +118,9 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/eighty"
+                    android:layout_height="@dimen/seventy"
                     android:layout_marginTop="@dimen/two"
-                    android:layout_marginRight="@dimen/two"
+                    android:layout_marginEnd="@dimen/two"
                     android:layout_weight="50"
                     android:background="@color/app_white_smoke" >
 
@@ -142,7 +130,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="@dimen/five"
-                        android:text="User Rating"
+                        android:text="@string/user_rating"
                         android:textSize="@dimen/fifteen_text_size" />
 
                     <TextView
@@ -151,18 +139,18 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/followers_text"
                         android:layout_centerInParent="true"
-                        android:layout_marginLeft="@dimen/five"
+                        android:layout_marginStart="@dimen/five"
                         android:layout_marginTop="@dimen/five"
                         android:text="@string/sample_no"
                         android:textColor="@color/blue"
-                        android:textSize="@dimen/thirty_text_size"
+                        android:textSize="@dimen/dialog_values"
                         android:textStyle="bold" />
 
                     </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/eighty"
+                    android:layout_height="@dimen/seventy"
                     android:layout_marginTop="@dimen/two"
                     android:layout_weight="50"
                     android:background="@color/app_white_smoke">
@@ -171,7 +159,7 @@
                      android:id="@+id/following_text"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="Release date"
+                     android:text="@string/release_date"
                      android:textSize="@dimen/fifteen_text_size"
                      android:layout_centerHorizontal="true"
                      android:layout_marginTop="@dimen/five" />
@@ -185,7 +173,7 @@
                         android:layout_marginTop="@dimen/five"
                         android:text="@string/sample_no"
                         android:textColor="@color/blue"
-                        android:textSize="@dimen/thirty_text_size"
+                        android:textSize="@dimen/dialog_values"
                         android:textStyle="bold" />
 
                 </RelativeLayout>

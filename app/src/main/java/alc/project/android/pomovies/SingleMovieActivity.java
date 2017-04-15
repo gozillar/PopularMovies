@@ -1,23 +1,20 @@
 package alc.project.android.pomovies;
 
-import android.content.Intent;
+import alc.project.android.pomovies.model.Movie;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
-
-import org.w3c.dom.Text;
 
 public class SingleMovieActivity extends AppCompatActivity {
 
     private static final String TAG = "SingleMovieActivity";
     TextView overview, release_date, movieTitle, user_voting;
     String moviePath;
-    ProgressBar progressBar;
+
     ImageView moviePoster, closeActivity;
 
     @Override
@@ -25,6 +22,7 @@ public class SingleMovieActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_movie);
         setUpViews();
+        loadData();
     }
 
     void setUpViews() {
@@ -34,30 +32,30 @@ public class SingleMovieActivity extends AppCompatActivity {
         release_date = (TextView) findViewById(R.id.release_date);
         user_voting = (TextView) findViewById(R.id.user_rating);
 
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        progressBar.setVisibility(View.VISIBLE);
-
         closeActivity = (ImageView) findViewById(R.id.closeActivity);
 
         closeActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                SingleMovieActivity.super.onBackPressed();
             }
         });
     }
 
     void loadData() {
-        Intent getPassedData = getIntent();
+
+        Movie movie = getIntent().getParcelableExtra("movie");
+
         moviePath = "http://image.tmdb.org/t/p/w342";
-        progressBar.setVisibility(View.INVISIBLE);
-        movieTitle.setText(getPassedData.getStringExtra("TITLE"));
-        overview.setText(getPassedData.getStringExtra("OVERVIEW"));
-        release_date.setText(getPassedData.getStringExtra("RELEASE_DATE"));
-        user_voting.setText(getPassedData.getStringExtra("VOTE_AVERAGE"));
 
-        Glide.with(this).load(moviePath + getPassedData.getStringExtra("POSTER")).into(moviePoster);
+        movieTitle.setText(movie.getOriginal_title());
+        overview.setText(movie.getOverview());
+        release_date.setText(movie.getRelease_date());
 
+        String vote = String.valueOf(movie.getVote_average());
+        user_voting.setText(vote);
+
+        Glide.with(this).load(moviePath + movie.getBackdrop_path()).into(moviePoster);
     }
 
 }

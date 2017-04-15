@@ -65,6 +65,32 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    void loadTopRatedData() {
+
+        String API_KEY = "e670cb047709fb74fb05ab7a751f3c08";
+        ApiInterface apiInterface = apiClient.getService();
+        Call<MovieList> movieListCall = apiInterface.getTopRatedMovies(API_KEY);
+        movieListCall.enqueue(new Callback<MovieList>() {
+            @Override
+            public void onResponse(Call<MovieList> call, Response<MovieList> response) {
+                if (response.isSuccessful()) {
+                    MovieList movieList = response.body();
+                    moviesAdapter = new MoviesAdapter(movieList.getResults());
+                    rRecyclerView.setAdapter(moviesAdapter);
+                } else {
+                    Toast.makeText(MainActivity.this, "Request not Sucessful", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<MovieList> call, Throwable t) {
+                Toast.makeText(MainActivity.this,
+                        "Request failed. Check your internet connection",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -77,10 +103,10 @@ public class MainActivity extends AppCompatActivity {
 
         switch (itemId) {
             case R.id.sortA:
-                //
+                loadMovieData();
                 return true;
             case R.id.sortB:
-                //
+                loadTopRatedData();
                 return true;
         }
         return super.onOptionsItemSelected(item);

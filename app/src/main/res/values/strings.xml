@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">PoMovies</string>
-    <string name="sortA">Sort by A</string>
-    <string name="sortB">Sort by B</string>
+    <string name="app_name">Popular Movies</string>
+    <string name="sortA">Most Popular</string>
+    <string name="sortB">Top Rated</string>
 
     <string name="action_settings">Settings</string>
     <string name="location">Lagos</string>
@@ -12,5 +12,11 @@
 
     <string name="sample_at">\@johndoe</string>
     <string name="title_activity_view_movie">ViewMovieActivity</string>
+    <string name="strings">%s</string>
+    <string name="release_date">Release Date</string>
+    <string name="plot_synopsis">Plot Synopsis</string>
+    <string name="user_rating">User Rating</string>
+    <string name="close">Close Activity</string>
+    <string name="movie_poster">Movie Poster</string>
 
 </resources>

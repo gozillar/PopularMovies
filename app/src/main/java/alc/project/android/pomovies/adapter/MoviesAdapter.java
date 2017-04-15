@@ -15,6 +15,7 @@ import java.util.List;
 
 import alc.project.android.pomovies.MainActivity;
 import alc.project.android.pomovies.R;
+import alc.project.android.pomovies.SingleMovieActivity;
 import alc.project.android.pomovies.model.Movie;
 
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesViewHolder> {
@@ -49,7 +50,9 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesView
             @Override
             public void onClick(View view) {
                 Context context = holder.itemView.getContext();
-                Intent intent = new Intent(context, MainActivity.class);
+                Intent intent = new Intent(context, SingleMovieActivity.class);
+                intent.putExtra("movie", currentMovie);
+                context.startActivity(intent);
             }
         });
     }
