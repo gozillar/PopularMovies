@@ -21,7 +21,11 @@
     <dimen name="twentytwo_text_size">22sp</dimen>
     <dimen name="thirty_text_size">30sp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="dialog_values">12sp</dimen>
-    <dimen name="title_text">14sp</dimen>
+    <dimen name="dialog_values">13sp</dimen>
+    <dimen name="title_text">15sp</dimen>
+    <dimen name="image_height">220dp</dimen>
+    <dimen name="card_height">36dp</dimen>
+    <dimen name="one_hundred_ten">110dp</dimen>
+    <dimen name="one_hundred_thirty">130dp</dimen>
 
 </resources>

@@ -10,19 +10,19 @@
         <ImageView
             android:id="@+id/movie_image"
             android:layout_width="match_parent"
-            android:layout_height="235dp"
+            android:layout_height="@dimen/image_height"
             android:scaleType="centerCrop" />
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="235dp"
+            android:layout_height="@dimen/image_height"
             android:alpha="0.5"
             android:background="@color/cardview_dark_background"
             android:scaleType="centerCrop" />
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="36dp"
+            android:layout_height="@dimen/card_height"
             android:layout_below="@id/movie_image">
 
             <TextView
@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:textAlignment="center"
-                android:textSize="14sp"
+                android:textSize="@dimen/title_text"
                 android:textStyle="bold" />
 
         </RelativeLayout>

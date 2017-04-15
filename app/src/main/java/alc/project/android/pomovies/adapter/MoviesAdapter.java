@@ -13,7 +13,6 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-import alc.project.android.pomovies.MainActivity;
 import alc.project.android.pomovies.R;
 import alc.project.android.pomovies.SingleMovieActivity;
 import alc.project.android.pomovies.model.Movie;
