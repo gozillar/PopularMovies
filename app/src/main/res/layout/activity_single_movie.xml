@@ -3,6 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
@@ -78,11 +82,18 @@
                 android:orientation="horizontal"
                 android:weightSum="100">
 
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/one_hundred_thirty"
                     android:layout_weight="50"
                     android:background="@color/app_white_smoke">
+
+
 
                     <TextView
                         android:id="@+id/synopsis"
@@ -105,7 +116,11 @@
                         android:textColor="@color/blue"
                         android:textSize="@dimen/dialog_values" />
 
+
+
                 </RelativeLayout>
+
+            </ScrollView>
 
             </LinearLayout>
 
@@ -187,5 +202,7 @@
         </LinearLayout>
 
     </android.support.design.widget.CoordinatorLayout>
+
+</ScrollView>
 
 </RelativeLayout>

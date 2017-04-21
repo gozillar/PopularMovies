@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     void loadMovieData() {
 
-        String API_KEY = "ENTER_API_KEY_HERE";
+        String API_KEY = "ENTER API_KEY HERE";
         ApiInterface apiInterface = apiClient.getService();
         Call<MovieList> movieListCall = apiInterface.getPopularMovies(API_KEY);
         movieListCall.enqueue(new Callback<MovieList>() {
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
     void loadTopRatedData() {
 
-        String API_KEY = "ENTER_API_KEY_HERE";
+        String API_KEY = "ENTER API_KEY HERE";
         ApiInterface apiInterface = apiClient.getService();
         Call<MovieList> movieListCall = apiInterface.getTopRatedMovies(API_KEY);
         movieListCall.enqueue(new Callback<MovieList>() {
